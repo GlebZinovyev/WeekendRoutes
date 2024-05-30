@@ -1,0 +1,10 @@
+
+  body {
+    background-image: url('img/fon1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Kyiv*Type Titling";
+    color: purple;
+  }
+  h1 {
+    font-family: "Kyiv*Type Titling" }

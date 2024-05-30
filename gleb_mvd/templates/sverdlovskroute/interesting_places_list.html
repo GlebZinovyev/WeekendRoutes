@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table>
+
+    <tr>
+        <th> <img src="/static/img/img9.png" align=”middle” height="600px">
+            <hr>
+            </th><th><h1> Список интересных мест </h1><hr>
+                {% for r in interesting_places_list %}
+    
+                <br>
+                <h3> <a class="nav-link" href="{% url 'interesting_places_detail'  r.id %}">{{ r }}</a></h3>
+                 
+            
+        {% endfor %}</th>
+     
+    </tr>
+  </table>   
+{% endblock %} 

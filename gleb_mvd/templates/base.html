@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="ru">          
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>       
+    <header>
+      {% include 'includes/header.html' %}
+      <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    </header>
+    <main style="background: rgba(190, 131, 76, 0.5)">
+      {% block content %}
+        Контент не подвезли :(
+      {% endblock %}
+    </main>
+    <footer>
+      {% include 'includes/footer.html' %} 
+    </footer>
+  </body>
+</html> 

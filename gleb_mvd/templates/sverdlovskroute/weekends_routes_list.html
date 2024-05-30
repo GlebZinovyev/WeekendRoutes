@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <table>
+
+            <tr>
+                <th> <img src="/static/img/img9.png" align=”middle” height="600px">
+                    <hr>
+                    </th><th><h1> Список маршрутов выходного дня </h1><hr>
+                        {% for r in weekends_routes_list %}
+            
+                        <br>
+                        <h3> <a class="nav-link" href="{% url 'weekends_routes_detail'  r.id %}">{{ r }}</a></h3>
+                         
+                    
+                {% endfor %}</th>
+             
+            </tr>
+          </table>       
+{% endblock %} 

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<table>
+
+    <tr>
+        <th><h1> {{ weekends_routes_detail.name }} </h1>
+            <hr>
+            <a href="{% url 'favourites_routes' weekends_routes_detail.id %}" type="button" class="b1">Добавить в избранное</a>
+            <h3> {{ weekends_routes_detail.description }} </h3>
+        <br><br>
+             <h3> Список интересных мест маршрута</h3>
+             
+             {% for place in  weekends_routes_detail.interesting_place.all %}
+
+             <h3> <a class="nav-link" href="{% url 'interesting_places_detail'  place.id %}">{{place.name}}</a></h3>   
+         
+     {% endfor %} 
+         </th>
+      <th><img src= {{weekends_routes_detail.img.url}} align=”middle” height="550px"> <br><hr></th>
+     
+    </tr>
+  </table>
+{% endblock %} 

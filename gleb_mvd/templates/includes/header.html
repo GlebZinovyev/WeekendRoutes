@@ -1,0 +1,94 @@
+{% load static %}
+<head> 
+    <nav class="navbar navbar-light">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" >
+    <a class="navbar-brand" href="/">
+        <img src="/static/img/logo.png" height="60px" class="d-inline-block align-top" alt="">
+      </a>
+    <style type="text/css">
+        body {
+            background-image: url('/static/img/fon1.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Kyiv*Type Titling";
+            color: #000000;
+          }
+          h1 {
+            font-family: "Kyiv*Type Titling";
+            color: #000000; 
+            font-size: 64pt;
+            text-align: center }
+            ul.navbar li {
+                background: white;
+                margin: 0.5em 0;
+                padding: 0.3em;
+                border-right: 1em solid black }
+              ul.navbar a {
+                text-decoration: none }
+            h3 {
+                font-family: "Kyiv*Type Titling";
+                color: #000000; 
+                font-size: 16pt;
+                text-align: center }
+          a {color: #227768;
+            font-size: 16pt;
+            text-decoration: none;}
+          li {text-align: center }
+          .b1 {
+            background: #BE834C;  
+            height: 42px;
+	border: none;
+	color: #f2f2f2;
+	padding: 10px;
+	font-size: 18px;
+	border-radius: 5px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease; 
+           }
+           .b1:hover {
+            background: #22776;
+            text-decoration: none;
+           }
+          th {text-align: center}
+          hr {
+            border: none; /* Убираем границу */
+            background-color: #BE834C; /* Цвет линии */
+            color: #BE834C; /* Цвет линии для IE6-7 */
+            height: 2px; /* Толщина линии */
+           }
+
+        </style>
+    {% if user.is_authenticated %}
+    <ul class="nav nav-pills">
+        <li class="nav-item"> 
+          <a class="nav-link" href="{% url 'route_map' %}">Карта</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">О проекте</a>
+        </li>
+        
+        <li class="nav-item"> 
+          <a class="nav-link" href="{% url 'profile'  user.username %}">Личный кабинет</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link link-light" href="{% url 'contact_page' %}">Обратная связь</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link link-light" href="{% url 'logout' %}">Выйти</a>
+        </li>
+        <li>
+          <h3>Пользователь: {{ user.username }}</h3>
+        </li>
+        {% else %}
+        <li class="nav-item"> 
+          <a class="nav-link link-light" href="{% url 'login' %}">Войти</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link link-light" href="auth/signup">Регистрация</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>      
+</head>

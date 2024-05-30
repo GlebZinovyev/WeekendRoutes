@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <h1> Личный кабинет пользователя {{ user.username }} </h1>
+      <div class="container py-5">   
+        <table>
+
+            <tr>
+                <th>
+        <h2>Избранные маршруты:  </h2> 
+    </th>     <th>{%for r in routes %}
+        <h3> {{ r.name }} </h3>
+        {%endfor%}</th></tr> </th> </tr><tr><th>
+        <h2>Избранные интересные места: </h2>   </th><th>
+        {%for p in places %}
+        <h3> {{ p.name }} </h3>
+        {%endfor%}</th></tr>
+        
+        </table>
+    {% endblock %} 

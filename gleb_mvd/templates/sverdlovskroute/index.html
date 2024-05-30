@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+ 
+ <table>
+
+    <tr>
+        <th><h1>Маршруты выходного дня</h1>
+            <hr>
+        <a href="{% url 'weekends_routes_list' %}" type="button" class="b1">
+            <h3> Список маршрутов выходного дня</h3>
+        </a> <br><br>
+           <a href="{% url 'interesting_places_list' %}" type="button" class="b1">
+             <h3> Список интересных мест </h3>
+         </a></th>
+      <th><img src="/static/img/img7.png" align=”middle” height="540px"> <br><hr></th>
+     
+    </tr>
+  </table>
+
+</body>
+{% endblock %} 

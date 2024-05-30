@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h3>Место добавлено в избранное!</h3>
+<br>
+           <a href="{% url 'interesting_places_list' %}" type="button" class="b1">
+             <h3> Список интересных мест </h3>
+         </a>
+{% endblock %} 
